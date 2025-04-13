@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bill Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+  <h1>Bill Generator</h1>
+  
+  <div class="form">
+    <input type="text" id="buyerName" placeholder="Buyer Name">
+    <input type="text" id="address" placeholder="Address">
+    <input type="text" id="contact" placeholder="Contact">
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="transactionId" placeholder="Transaction ID">
+    <input type="date" id="purchaseDate">
+    <select id="paymentMethod">
+      <option value="Cash">Cash</option>
+      <option value="Card">Card</option>
+      <option value="UPI">UPI</option>
+    </select>
+   
+  </div>
+  <button onclick="addProduct()">+ Add Product</button>
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="totals">
+    <p>Subtotal: ₹<span id="subtotal">0.00</span></p>
+    <h3>Total Amount: ₹<span id="totalAmount">0.00</span></h3>
+  </div>
+
+  <div class="actions">
+    <button onclick="previewBill()">Preview Bill</button>
+    <button onclick="window.print()">Print</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+    <button onclick="saveBill()">Save Bill</button>
+  </div>
+
+  <div id="previewSection" style="display:none; border:1px solid #ccc; padding:10px; margin-top:20px;">
+    <h3>Bill Preview</h3>
+    <div id="previewContent"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
